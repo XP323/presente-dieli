@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Feliz 3 Meses, Leidieli 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px 20px;
+            background: linear-gradient(135deg, #ffe6f0, #ffccf9);
+            font-family: 'Comic Sans MS', cursive;
+            color: #d63384;
+            text-align: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 90%;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        button {
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #ff3385;
+        }
+
+        #surpresa {
+            font-size: 1.8em;
+            margin-top: 30px;
+            display: none;
+            animation: aparecer 1s ease-in-out forwards;
+            padding: 0 10px;
+        }
+
+        .foto {
+            margin: 20px 0;
+            width: 90%;
+            max-width: 320px;
+        }
+
+        .foto img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #ffb3d9;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Corações animados */
+        .heart {
+            position: fixed;
+            top: -50px;
+            font-size: 24px;
+            color: #ff4da6;
+            animation: fall 5s linear infinite;
+            z-index: 999;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Corações animados -->
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerText = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+</script>
+
+<h1>Feliz 3 Meses, Leidieli! 💘</h1>
+<p>Desde o dia <strong>27 de junho</strong>, minha vida ganhou mais cor, mais riso e mais amor.<br />
+<strong>Leidieli</strong>, você é o motivo de cada batida do meu coração.<br />
+Feliz <strong>3 meses</strong> de nós. <br /><br />
+Com amor, <strong>José Eduardo 💖</strong></p>
+
+<!-- Foto do casal -->
+<div class="foto">
+    <img src="20250816_201659.jpg" alt="Foto de José Eduardo e Leidieli" />
+</div>
+
+<button onclick="mostrarSurpresa()">Clique aqui para uma surpresa 💝</button>
+
+<div id="surpresa">💖 Eu te amo mais do que palavras podem expressar 💖</div>
+
+<script>
+    function mostrarSurpresa() {
+        const surpresa = document.getElementById('surpresa');
+        if (surpresa.style.display !== 'block') {
+            surpresa.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
